@@ -1,0 +1,110 @@
+/**
+ * Research page
+ * =============
+ * Styles specific to research.html: the page header, project sections and the
+ * media gallery (images, videos and responsive embeds). Loaded only on that
+ * page, on top of the shared stylesheets.
+ */
+
+.research-hero {
+  padding-block: var(--space-24) var(--space-12);
+}
+.research-hero h1 {
+  margin-bottom: var(--space-3);
+}
+.research-hero__meta {
+  color: var(--color-accent);
+  font-weight: 600;
+  margin-bottom: var(--space-6);
+}
+.research-hero .prose {
+  margin-bottom: var(--space-8);
+}
+
+/* Quick links to each project (shown when there are 2+). */
+.research-toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+.research-toc a {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text);
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  transition: border-color var(--transition), background-color var(--transition);
+}
+.research-toc a:hover {
+  background: var(--color-surface);
+  border-color: color-mix(in srgb, var(--color-accent) 40%, var(--color-border));
+}
+
+/* ---- Project section -------------------------------------------- */
+.project__period {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+}
+.project__role {
+  color: var(--color-accent);
+  font-weight: 600;
+  margin-top: var(--space-2);
+}
+.project__body {
+  max-width: 65ch;
+}
+.project__summary {
+  font-size: var(--text-lg);
+  color: var(--color-text);
+}
+.project__body + .tags {
+  margin-top: var(--space-6);
+}
+.project__links {
+  margin-top: var(--space-8);
+}
+
+/* ---- Media gallery ---------------------------------------------- */
+.media-grid {
+  display: grid;
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+}
+.media {
+  margin: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--color-surface);
+}
+.media img,
+.media video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.media video {
+  background: #000;
+}
+.media figcaption {
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+/* Responsive 16:9 wrapper for embedded (YouTube/Vimeo) videos. */
+.embed {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+.embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}

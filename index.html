@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO / social preview. Update these to match your details. -->
+    <title>Your Name — Researcher &amp; Engineer</title>
+    <meta
+      name="description"
+      content="Personal site of Your Name — career, education, achievements and research projects."
+    />
+    <meta name="author" content="Your Name" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Your Name — Researcher &amp; Engineer" />
+    <meta
+      property="og:description"
+      content="Career, education, achievements and research projects."
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+
+    <!-- Apply saved theme before paint to avoid a flash of the wrong theme. -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("portfolio-theme");
+          if (!t)
+            t = window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+          document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- Styles, loaded in cascade order: tokens → base → layout → components. -->
+    <link rel="stylesheet" href="assets/css/variables.css" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/layout.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+  </head>
+
+  <body data-page="home">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Header is injected by assets/js/layout.js -->
+    <header class="site-header" data-site-header></header>
+
+    <!-- ============================= Main ============================= -->
+    <main id="main">
+      <!-- Hero (populated by render.js from profile data) -->
+      <section class="container hero" id="hero" aria-label="Introduction"></section>
+
+      <!-- About -->
+      <section class="section" id="about">
+        <div class="container">
+          <header class="section__header">
+            <span class="section__eyebrow">About</span>
+            <h2>A bit about me</h2>
+          </header>
+          <div class="prose" id="about-prose"></div>
+        </div>
+      </section>
+
+      <!-- Experience / career -->
+      <section class="section" id="experience">
+        <div class="container">
+          <header class="section__header">
+            <span class="section__eyebrow">Career</span>
+            <h2>Experience</h2>
+          </header>
+          <div class="timeline" id="experience-list"></div>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section class="section" id="education">
+        <div class="container">
+          <header class="section__header">
+            <span class="section__eyebrow">Education</span>
+            <h2>Education</h2>
+          </header>
+          <div class="timeline" id="education-list"></div>
+        </div>
+      </section>
+
+      <!-- Achievements -->
+      <section class="section" id="achievements">
+        <div class="container">
+          <header class="section__header">
+            <span class="section__eyebrow">Highlights</span>
+            <h2>Achievements</h2>
+          </header>
+          <div class="grid" id="achievements-grid"></div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="section" id="contact">
+        <div class="container">
+          <header class="section__header">
+            <span class="section__eyebrow">Contact</span>
+            <h2>Let's connect</h2>
+          </header>
+          <div class="social-list" id="contact-socials"></div>
+        </div>
+      </section>
+
+      <noscript>
+        <div class="container" style="padding-block: 2rem">
+          This site renders its content with JavaScript. Please enable
+          JavaScript to view it.
+        </div>
+      </noscript>
+    </main>
+
+    <!-- Footer is injected by assets/js/layout.js -->
+    <footer class="site-footer" data-site-footer></footer>
+
+    <!-- Scripts (deferred → run in order after the document is parsed). -->
+    <script src="assets/data/content.js" defer></script>
+    <script src="assets/js/icons.js" defer></script>
+    <script src="assets/js/utils.js" defer></script>
+    <script src="assets/js/layout.js" defer></script>
+    <script src="assets/js/render.js" defer></script>
+    <script src="assets/js/ui.js" defer></script>
+    <script src="assets/js/app.js" defer></script>
+  </body>
+</html>

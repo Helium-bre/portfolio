@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C /home/hehu1/Documents/random/web status)"
+    ]
+  }
+}
