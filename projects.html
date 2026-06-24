@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Projects — Your Name</title>
+    <meta
+      name="description"
+      content="Selected projects and work by Your Name."
+    />
+    <meta name="author" content="Your Name" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Projects — Your Name" />
+    <meta property="og:description" content="Selected projects and work." />
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+
+    <!-- Apply saved theme before paint to avoid a flash of the wrong theme. -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("portfolio-theme");
+          if (!t)
+            t = window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+          document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- Shared styles + projects-page-specific styles. -->
+    <link rel="stylesheet" href="assets/css/variables.css" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/layout.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/projects.css" />
+  </head>
+
+  <body data-page="projects">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Header is injected by assets/js/layout.js -->
+    <header class="site-header" data-site-header></header>
+
+    <!-- Projects content is rendered by assets/js/projects.js -->
+    <main id="main">
+      <div id="projects-page"></div>
+
+      <noscript>
+        <div class="container" style="padding-block: 2rem">
+          This page renders its content with JavaScript. Please enable
+          JavaScript to view it.
+        </div>
+      </noscript>
+    </main>
+
+    <!-- Footer is injected by assets/js/layout.js -->
+    <footer class="site-footer" data-site-footer></footer>
+
+    <!-- Scripts (deferred → run in order after the document is parsed). -->
+    <script src="assets/data/content.js" defer></script>
+    <script src="assets/js/icons.js" defer></script>
+    <script src="assets/js/utils.js" defer></script>
+    <script src="assets/js/layout.js" defer></script>
+    <script src="assets/js/projects.js" defer></script>
+    <script src="assets/js/ui.js" defer></script>
+    <script src="assets/js/app.js" defer></script>
+  </body>
+</html>

@@ -1,10 +1,10 @@
 # Personal Portfolio
 
 A minimalist personal website to showcase your **career, education, and
-achievements** on the home page, plus a dedicated **Research** page describing
-your lab work and the projects you contributed to (with images and videos).
-Built with plain HTML, CSS, and JavaScript — no frameworks and no build step —
-so it deploys to GitHub Pages as-is.
+achievements** on the home page, plus dedicated **Projects** and **Research**
+pages describing the things you have built and your lab work (with images and
+videos). Built with plain HTML, CSS, and JavaScript — no frameworks and no
+build step — so it deploys to GitHub Pages as-is.
 
 ## Quick start
 
@@ -30,9 +30,10 @@ python3 -m http.server 8000
 | Page            | Shows                                                        |
 | --------------- | ----------------------------------------------------------- |
 | `index.html`    | Hero, About, Experience, Education, Achievements, Contact   |
+| `projects.html` | Intro + one section per project (text + media)              |
 | `research.html` | Lab intro + one section per research project (text + media) |
 
-The two pages share the same header, footer, styles, and theme. The header and
+The pages share the same header, footer, styles, and theme. The header and
 footer are defined once in `assets/js/layout.js`, so the navigation never drifts
 between pages.
 
@@ -41,6 +42,7 @@ between pages.
 ```
 .
 ├── index.html              # Home page
+├── projects.html           # Projects page
 ├── research.html           # Research page
 ├── .nojekyll               # Tell GitHub Pages to serve files as-is
 ├── assets/
@@ -49,12 +51,14 @@ between pages.
 │   │   ├── base.css        # Reset + base typography
 │   │   ├── layout.css      # Header, nav, sections, footer
 │   │   ├── components.css  # Hero, cards, timeline, tags, buttons
+│   │   ├── projects.css    # Projects-page-only styles (media gallery, etc.)
 │   │   └── research.css    # Research-page-only styles (media gallery, etc.)
 │   ├── js/
 │   │   ├── icons.js        # Inline SVG icon set
 │   │   ├── utils.js        # Shared helpers (escape, slugify, markup bits)
 │   │   ├── layout.js       # Shared header + footer + nav
 │   │   ├── render.js       # Renders the home page
+│   │   ├── projects.js     # Renders the projects page
 │   │   ├── research.js     # Renders the research page
 │   │   ├── ui.js           # Theme toggle, mobile menu, scroll-spy
 │   │   └── app.js          # Entry point (picks the renderer per page)
@@ -75,7 +79,7 @@ between pages.
 | ------------------------------ | ------------------------------------------------ |
 | Name, bio, jobs, research, etc.| `assets/data/content.js`                         |
 | Colors / fonts / spacing       | `assets/css/variables.css`                       |
-| Page titles & social preview   | the `<head>` of `index.html` / `research.html`   |
+| Page titles & social preview   | the `<head>` of each `*.html` page               |
 | Navigation links               | `NAV` array in `assets/js/layout.js`             |
 
 ### Add a job, degree, or achievement
@@ -83,10 +87,11 @@ between pages.
 Copy an existing entry in the matching list in `content.js` and edit the
 fields. Lists render in order, so put the most recent first.
 
-### Add a research project (with images / videos)
+### Add a project or research project (with images / videos)
 
-Add an entry to `research.projects` in `content.js`. Each project has a text
-write-up and a `media` list. Media items can be:
+Add an entry to `projects.items` (Projects page) or `research.projects`
+(Research page) in `content.js`. Each entry has a text write-up and a `media`
+list. Media items can be:
 
 ```js
 // An image (put the file in assets/images/projects/)
@@ -102,7 +107,7 @@ write-up and a `media` list. Media items can be:
 ```
 
 Each project automatically gets a shareable anchor based on its `slug`
-(e.g. `research.html#project-one`).
+(e.g. `projects.html#my-project` or `research.html#project-one`).
 
 ### Images & theme
 

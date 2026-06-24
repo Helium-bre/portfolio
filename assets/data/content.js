@@ -188,4 +188,82 @@ window.PORTFOLIO = {
       },
     ],
   },
+
+  /* ---------------------------------------------------------------- */
+  /* Projects. Populates the dedicated projects.html page.            */
+  /* A showcase of things you have built, each with its own images    */
+  /* and/or videos. Structured like the research page above.          */
+  /* ---------------------------------------------------------------- */
+  projects: {
+    // Intro paragraphs at the top of the page. Each string is a paragraph.
+    intro: [
+      "A selection of projects I have designed and built. Each one links to its code, a demo, or a write-up where available.",
+    ],
+    // One entry per project. They render top to bottom on the page.
+    items: [
+      {
+        // "slug" gives the section a stable #anchor (projects.html#my-project).
+        // Omit it to auto-generate one from the title.
+        slug: "my-project",
+        title: "My Project",
+        // Optional one-line role/subtitle shown under the title.
+        role: "Solo project · Web app",
+        // Optional date or date range.
+        period: "2024",
+        // One-line summary, shown emphasized at the top of the project.
+        summary: "A sentence summarising what this project is and why it matters.",
+        // Longer write-up. Each string is its own paragraph.
+        body: [
+          "Explain the project: the problem it solves, how you built it, and the interesting technical decisions along the way.",
+          "Add as many paragraphs as you need.",
+        ],
+        tags: ["Tech", "Tool", "Domain"],
+        // Images and videos shown in a gallery under the text.
+        // type is one of:
+        //   "image" — a picture in assets/images/projects/
+        //   "video" — a video file you host in assets/videos/
+        //   "embed" — a YouTube/Vimeo *embed* URL (…/embed/VIDEO_ID)
+        media: [
+          {
+            type: "image",
+            src: "assets/images/projects/example.jpg",
+            caption: "Caption describing the screenshot or figure.",
+          },
+          {
+            type: "video",
+            src: "assets/videos/demo.mp4",
+            poster: "", // optional still shown before playback
+            caption: "A short demo video.",
+          },
+          {
+            type: "embed",
+            src: "https://www.youtube.com/embed/VIDEO_ID",
+            caption: "An embedded video.",
+          },
+        ],
+        // Optional related links (live demo, code, write-up...).
+        links: [
+          { label: "Live demo", url: "" },
+          { label: "Code", url: "" },
+        ],
+      },
+      {
+        slug: "another-project",
+        title: "Another Project",
+        role: "Team of 3",
+        period: "2023",
+        summary: "What this project was about.",
+        body: ["Describe this project here."],
+        tags: ["Tech"],
+        media: [
+          {
+            type: "image",
+            src: "assets/images/projects/example2.jpg",
+            caption: "",
+          },
+        ],
+        links: [],
+      },
+    ],
+  },
 };
