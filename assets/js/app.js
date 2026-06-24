@@ -20,6 +20,8 @@
     var page = document.body.getAttribute("data-page") || "home";
     try {
       if (page === "research" && P.renderResearchPage) P.renderResearchPage();
+      else if (page === "projects" && P.renderProjectsPage)
+        P.renderProjectsPage();
       else if (P.render) P.render();
     } catch (e) {
       console.error("[app] render failed:", e);

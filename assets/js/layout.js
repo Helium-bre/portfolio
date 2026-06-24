@@ -17,6 +17,7 @@
     { label: "Experience", hash: "#experience" },
     { label: "Education", hash: "#education" },
     { label: "Achievements", hash: "#achievements" },
+    { label: "Projects", page: "projects.html" },
     { label: "Research", page: "research.html" },
     { label: "Contact", hash: "#contact" },
   ];
@@ -32,7 +33,9 @@
   }
 
   function isActive(item, page) {
-    return !!item.page && page === "research" && item.page.indexOf("research") === 0;
+    // A page-type nav item is active when its file matches the current page,
+    // e.g. data-page="projects" ↔ "projects.html".
+    return !!item.page && page !== "home" && item.page.indexOf(page) === 0;
   }
 
   function buildHeader(profile, page) {
